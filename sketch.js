@@ -18,21 +18,21 @@ function setup() {
 
 	
 
-	paper = new Paper(800,600,30);
-	
+	paper = new Paper(300,600,35);
+
 	groundObject=new ground(width/2,670,width,20);
 	dustbinObj=new dustbin(1200,650);
 
 	Engine.run(engine);
-  
+
 }
 
 
 function draw() {
-  rectMode(CENTER);
-  background("black");
- 
-  image(paperImg ,paper.x,paper.y,40,40);
+  //rectMode(CENTER);
+  background("white");
+
+  //image(paperImg ,paper.x,paper.y,40,40);
 
   groundObject.display();
   dustbinObj.display();
@@ -42,6 +42,6 @@ function draw() {
 
 function keyPressed(){
 	if (keyCode === UP_ARROW){
-		Matter.body.applyForce(paper.body,paper.body.position,{x:130,y:145});
+		Matter.Body.applyForce(paper.body,paper.body.position,{x:140,y:-100});
 	}
 }
